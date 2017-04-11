@@ -2,47 +2,49 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
-  console.log(data)
-  alert('You have signed up')
+  document.querySelector('.authText').style.display = 'block'
 }
 
-const signUpFailure = (error) => {
-  console.error(error)
-  alert('Unsuccessful sign up')
+const signUpFailure = () => {
+  $('.authText').text('Unsuccessful sign up')
+  document.querySelector('.authText').style.display = 'block'
 }
 
 const signInSuccess = (data) => {
-  console.log(data)
-  alert('You have signed in')
+  document.querySelector('.signedIn').style.display = 'none'
+  $('.authText').text('Thank you for signing in')
+  document.querySelector('.authText').style.display = 'block'
+  document.querySelector('.container').style.display = 'block'
   // store the user object as per below
   store.user = data.user
 }
 
-const signInFailure = (error) => {
-  console.error(error)
-  alert('Unsuccessful sign in')
+const signInFailure = () => {
+  $('.authText').text('Unsuccessful sign in')
+  document.querySelector('.authText').style.display = 'block'
 }
 
 const changePasswordSuccess = (data) => {
-  console.log('password changed', data)
-  alert('Successful PW Change')
+  $('.authText').text('Successful password change')
+  document.querySelector('.authText').style.display = 'block'
 }
 
-const changePasswordFailure = (error) => {
-  console.error(error)
-  alert('Unsuccessful PW change')
+const changePasswordFailure = () => {
+  $('.authText').text('Unsuccessful password change')
+  document.querySelector('.authText').style.display = 'block'
 }
 
 const signOutSuccess = (data) => {
-  console.log('You have signed out!')
-  alert('You have signed out')
+  document.querySelector('.signedIn').style.display = 'block'
+  document.querySelector('.container').style.display = 'none'
+  document.querySelector('.authText').style.display = 'none'
   // store the user with a value of null as per below
   store.user = null
 }
 
-const signOutFailure = (error) => {
-  console.error(error)
-  alert('Unsuccessful sign in')
+const signOutFailure = () => {
+  $('.authText').text('Unsuccessful sign out')
+  document.querySelector('.authText').style.display = 'block'
 }
 
 module.exports = {

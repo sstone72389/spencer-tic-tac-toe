@@ -17,7 +17,17 @@ p {
   text-align: center;
 }
 
+.signedIn {
+  font-size: 35px;
+}
+
+.authText {
+  display: none;
+  font-size: 35px;
+}
+
 .container {
+  display: none;
   height: 300px;
   margin-left: 0 auto;
   margin-right: 0 auto;
