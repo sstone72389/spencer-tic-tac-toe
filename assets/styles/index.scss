@@ -1,2 +1,42 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
+
+nav {
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Monoton', cursive;
+  font-size: 50px;
+  text-align: center;
+}
+
+p {
+  font-family: 'Farsan', cursive;
+  font-size: 20px;
+  text-align: center;
+}
+
+.container {
+  height: 300px;
+  margin-left: 0 auto;
+  margin-right: 0 auto;
+  margin-top: 5%;
+  overflow: hidden;
+  width: 400px;
+}
+
+.inner {
+  background: lightgray;
+  border-radius: 1px;
+  display: inline-block;
+  height: 77px;
+  margin: 10px;
+  overflow: hidden;
+  text-align: center;
+  width: 77px;
+}
+
+footer {
+  float: right;
+}
