@@ -2,6 +2,7 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
+  $('.authText').text('THANKS FOR SIGNING UP')
   document.querySelector('.authText').style.display = 'block'
 }
 
@@ -11,9 +12,8 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (data) => {
+  document.querySelector('.authText').style.display = 'none'
   document.querySelector('.signedIn').style.display = 'none'
-  $('.authText').text('Thank you for signing in')
-  document.querySelector('.authText').style.display = 'block'
   document.querySelector('.container').style.display = 'block'
   document.querySelector('.hideOnStart').style.display = 'inline'
   document.querySelector('.hideOnStartTwo').style.display = 'inline'
