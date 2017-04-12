@@ -19,6 +19,7 @@ const signInSuccess = (data) => {
   document.querySelector('.hideOnStartTwo').style.display = 'inline'
   document.querySelector('.hideOnSignIn').style.display = 'none'
   document.querySelector('.hideOnSignInTwo').style.display = 'none'
+  document.querySelector('.reset').style.display = 'block'
 
   // store the user object as per below
   store.user = data.user

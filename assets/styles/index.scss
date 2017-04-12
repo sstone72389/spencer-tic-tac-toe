@@ -48,11 +48,17 @@ p {
   background: lightgray;
   border-radius: 1px;
   display: inline-block;
+  font-size: 45px;
   height: 74px;
   margin: 6px;
   overflow: hidden;
   text-align: center;
   width: 74px;
+}
+
+.reset {
+  display: none;
+  text-align: center;
 }
 
 footer {
