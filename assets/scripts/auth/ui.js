@@ -48,6 +48,7 @@ const signOutSuccess = (data) => {
   document.querySelector('.hideOnStartTwo').style.display = 'none'
   document.querySelector('.hideOnSignIn').style.display = 'inline'
   document.querySelector('.hideOnSignInTwo').style.display = 'inline'
+  document.querySelector('.reset').style.display = 'none'
   // store the user with a value of null as per below
   store.user = null
 }
