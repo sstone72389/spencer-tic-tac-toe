@@ -1,11 +1,27 @@
-Submit detailed answers to the following in this file via a pull request:
+``
+Technologies used:
 
-A wireframe of what your game project will look like.
+HTML
+CSS
+JS
+jQuery
+JSON
+AJAX
+Git
+GitHub
+Grunt
+Rails
+Sass
+Bootstrap
+
+
+Link to Wire Frames:
 
 http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671623/IMG_2997_y5w5qp.jpg http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671644/IMG_2998_qqedft.jpg http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671648/IMG_2999_cne9fb.jpg
 
-The data structure you plan to use.
+This was my initial planning structure based on the game-scope-study including user stories:
 
+***************************************************************************************************
 gameboard: Array of 9 in JS Using Divs in HTML and CSS with respective borders to emulate proper game board. Classes and IDs will need to be used. user login: object (using JSON and Ajax) user info: object (using JSON and Ajax) player win status: boolean X game piece: string (large font styling with google fonts) O game piece: string (large font styling with google fonts)
 
 How you will take the markup of the game board and represent it in JS
@@ -36,4 +52,15 @@ Do you plan to attempt any of the bonuses?
 
 If time permits, yes.
 
-You may want to submit pictures for your wireframes and/or user stories. Markdown Cheatsheet has instructions to link to a picture you've uploaded to a service like Imgur.
+***************************************************************************************************
+
+
+Problem Solving Strategy/development proccess:
+
+My strategy was to break things down into bit size pieces. Debugging was my main issue and slowly throughout the project I was more and more thorough with this. I utlilized all available resources such as colleagues and consultants and used google, w3 schools, stack overflow etc.
+
+Unsolved issues:
+
+I believe i was able to meet all requirements. That said, I would really like to clean up my code and make it more modular. I would also like to utilize loops rather than if/else statements to make my code a bit more DRY.
+
+``
