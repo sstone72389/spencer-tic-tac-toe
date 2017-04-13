@@ -28,7 +28,7 @@ const checkWin = function () {
     $('.winStatement').text(currentPlayer + ' has won!')
     document.querySelector('.winStatement').style.display = 'block'
     win = true
-  } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[3] && gameArray[0] !== '') {
+  } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[0] !== '') {
     $('.winStatement').text(currentPlayer + ' has won!')
     document.querySelector('.winStatement').style.display = 'block'
     win = true
