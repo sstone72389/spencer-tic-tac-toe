@@ -3,23 +3,26 @@ const store = require('../store.js')
 
 const signUpSuccess = (data) => {
   $('.authText').text('THANKS FOR SIGNING UP')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 const signUpFailure = () => {
   $('.authText').text('Unsuccessful sign up')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 const signInSuccess = (data) => {
-  document.querySelector('.authText').style.display = 'none'
-  document.querySelector('.signedIn').style.display = 'none'
-  document.querySelector('.container').style.display = 'block'
-  document.querySelector('.hideOnStart').style.display = 'inline'
-  document.querySelector('.hideOnStartTwo').style.display = 'inline'
-  document.querySelector('.hideOnSignIn').style.display = 'none'
-  document.querySelector('.hideOnSignInTwo').style.display = 'none'
-  document.querySelector('.reset').style.display = 'block'
+  // $('.authText').hide()
+  // does not work for some reason check tomorrow
+  $('.signedIn').hide()
+  $('.container').show()
+  $('.hideOnStart').show()
+  $('.hideOnStartTwo').show()
+  $('.authText').show()
+  $('.hideOnSignIn').hide()
+  $('.hideOnSignInTwo').hide()
+  $('.reset').show()
+  $('.authText').hide()
 
   // store the user object as per below
   store.user = data.user
@@ -27,35 +30,36 @@ const signInSuccess = (data) => {
 
 const signInFailure = () => {
   $('.authText').text('Unsuccessful sign in')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 const changePasswordSuccess = (data) => {
   $('.authText').text('Successful password change')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 const changePasswordFailure = () => {
   $('.authText').text('Unsuccessful password change')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 const signOutSuccess = (data) => {
-  document.querySelector('.signedIn').style.display = 'block'
-  document.querySelector('.container').style.display = 'none'
-  document.querySelector('.authText').style.display = 'none'
-  document.querySelector('.hideOnStart').style.display = 'none'
-  document.querySelector('.hideOnStartTwo').style.display = 'none'
-  document.querySelector('.hideOnSignIn').style.display = 'inline'
-  document.querySelector('.hideOnSignInTwo').style.display = 'inline'
-  document.querySelector('.reset').style.display = 'none'
+  $('.signedIn').show()
+  $('.container').hide()
+  $('.authText').hide()
+  $('.hideOnStart').hide()
+  $('.hideOnStartTwo').hide()
+  $('.hideOnSignIn').show()
+  $('.hideOnSignInTwo').show()
+  $('.reset').hide()
+  $('.winStatement').hide()
   // store the user with a value of null as per below
   store.user = null
 }
 
 const signOutFailure = () => {
   $('.authText').text('Unsuccessful sign out')
-  document.querySelector('.authText').style.display = 'block'
+  $('.authText').show()
 }
 
 module.exports = {
