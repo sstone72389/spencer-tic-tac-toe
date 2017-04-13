@@ -44,6 +44,11 @@ p {
   font-size: 35px;
 }
 
+.getText {
+  display: none;
+  font-size: 35px;
+}
+
 .container {
   display: none;
   height: 300px;
@@ -67,6 +72,11 @@ p {
 }
 
 .init {
+  display: none;
+  text-align: center;
+}
+
+.getGamesDiv {
   display: none;
   text-align: center;
 }

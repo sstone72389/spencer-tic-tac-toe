@@ -43,12 +43,21 @@ const onCreateGame = function (event) {
     .catch(ui.createGameFailure)
 }
 
+const onGetGames = function (event) {
+  event.preventDefault()
+  const data = getFormFields(this)
+  api.getGames(data)
+    .then(ui.displayGamesSuccess)
+    .catch(ui.displayGamesFailure)
+}
+
 const addHandlers = () => {
   $('#sign-up').on('submit', onSignUp)
   $('#sign-in').on('submit', onSignIn)
   $('#change-password').on('submit', onChangePassword)
   $('#sign-out').on('submit', onSignOut)
   $('#init').on('click', onCreateGame)
+  $('#getGames').on('click', onGetGames)
 }
 
 module.exports = {

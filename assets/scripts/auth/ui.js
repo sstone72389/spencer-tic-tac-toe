@@ -20,6 +20,7 @@ const signInSuccess = (data) => {
   $('.hideOnSignInTwo').hide()
   $('.init').show()
   $('.authText').hide()
+  $('.getGamesDiv').show()
 
   // store the user object as per below
   store.user = data.user
@@ -51,6 +52,8 @@ const signOutSuccess = (data) => {
   $('.init').hide()
   $('.winStatement').hide()
   $('.drawStatement').hide()
+  $('.getGamesDiv').hide()
+  $('.getText').hide()
   // store the user with a value of null as per below
   store.user = null
 }
@@ -61,21 +64,30 @@ const signOutFailure = () => {
 }
 
 const createGameSuccess = (data) => {
-  console.log('data is', data)
   store.game = data.game
 }
 
 const createGameFailure = () => {
-  console.log('game not created successfully')
+  $('.authText').text('game not created successfully')
+  $('.authText').show()
 }
 
-// const updateGameSuccess = (data) => {
-//   console.log('data is', data)
-//   store.game = data.game
-// }
-// const updateGameFailure = () => {
-//   console.log('game patch failed')
-// }
+const displayGamesSuccess = (response) => {
+  if (response.games.length === 0) {
+    $('.getText').text('You haven\'t played any games yet :(')
+    $('.getText').show()
+  } else if (response.games.length === 1) {
+    $('.getText').text('You played ' + response.games.length + ' game')
+    $('.getText').show()
+  } else {
+    $('.getText').text('You played ' + response.games.length + ' games')
+    $('.getText').show()
+  }
+}
+const displayGamesFailure = () => {
+  $('.getText').text('Failed to display game count')
+  $('.getText').show()
+}
 
 module.exports = {
   signUpSuccess,
@@ -87,5 +99,7 @@ module.exports = {
   signOutFailure,
   signOutSuccess,
   createGameSuccess,
-  createGameFailure
+  createGameFailure,
+  displayGamesSuccess,
+  displayGamesFailure
 }

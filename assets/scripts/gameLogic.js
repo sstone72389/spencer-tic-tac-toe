@@ -19,6 +19,7 @@ const startGame = function () {
     currentPlayer = 'x'
     win = false
     $('.container').show()
+    $('.getText').hide()
   })
   // checks win status. Includes empty strings at end due to erroneous win
   // immeadiately upon game start due to all cell data matching
