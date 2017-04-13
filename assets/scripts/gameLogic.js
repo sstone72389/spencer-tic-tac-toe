@@ -1,22 +1,14 @@
 'use strict'
+// requires api.js to send requests to server
+const updatedGame = require('./auth/api.js').updatedGame
+
 const startGame = function () {
   let currentPlayer = 'x'
   let turnNumber = 1
   let gameArray = ['', '', '', '', '', '', '', '', '']
   let win = false
 
-  // const winning = [
-  //   [0, 1, 2],
-  //   [3, 4, 5],
-  //   [6, 7, 8],
-  //   [0, 3, 6],
-  //   [1, 4, 7],
-  //   [2, 5, 8],
-  //   [0, 4, 8],
-  //   [2, 4, 6]
-  // ]
-
-  // need to make this work for sign outs so gameboard resets without button
+// button that initializes game, resets board and is also used for POST
   $('.initButton').on('click', function () {
     $('.inner[data-id]').text('')
     gameArray = ['', '', '', '', '', '', '', '', '']
@@ -28,7 +20,8 @@ const startGame = function () {
     win = false
     $('.container').show()
   })
-
+  // checks win status. Includes empty strings at end due to erroneous win
+  // immeadiately upon game start due to all cell data matching
   const checkWin = function () {
     if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[0] !== '') {
       $('.winStatement').text(currentPlayer + ' has won!')
@@ -64,14 +57,22 @@ const startGame = function () {
       win = true
     }
   }
-
+  // uses callback function that determines which div has been clicked
   $('.inner[data-id]').on('click', function () {
+    // define update as a variable that contains an object within an object
+    // when a cell is clicked: update the index value of the object with
+    // the value of the cell clicked. Pass which player clicked.
+    const update = {cell: {index: this.dataset.id, value: currentPlayer}}
+    // if currentPlayer is x, the div is empty and no one has won, allow move,
+    // add to count (to check for draw at end), check if anyone won and finally
+    // switch the player if the game is still active
     if (currentPlayer === 'x' && gameArray[this.dataset.id] === '' && win === false) {
       $(this).text('x')
       turnNumber += 1
       gameArray[this.dataset.id] = 'x'
       checkWin()
       currentPlayer = 'o'
+      // checks same data as above
     } else if (currentPlayer === 'o' && gameArray[this.dataset.id] === '' && win === false) {
       $(this).text('x')
       $(this).text('o')
@@ -80,9 +81,17 @@ const startGame = function () {
       checkWin()
       currentPlayer = 'x'
     }
+    // if all turns have been used and no one won......
     if (turnNumber === 10 && win === false) {
+      // sets game as complete
+      update.over = true
       $('.drawStatement').show()
+    } else if (win === true) {
+      // sets game as complete
+      update.over = true
     }
+    // call function to pass data to API
+    updatedGame({game: update})
   })
 }
 

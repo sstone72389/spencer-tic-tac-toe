@@ -12,8 +12,6 @@ const signUpFailure = () => {
 }
 
 const signInSuccess = (data) => {
-  // $('.authText').hide()
-  // does not work for some reason check tomorrow
   $('.signedIn').hide()
   $('.hideOnStart').show()
   $('.hideOnStartTwo').show()
@@ -64,16 +62,22 @@ const signOutFailure = () => {
 
 const createGameSuccess = (data) => {
   console.log('data is', data)
-  store.game = data.user
+  store.game = data.game
 }
 
 const createGameFailure = () => {
   console.log('game not created successfully')
 }
 
+// const updateGameSuccess = (data) => {
+//   console.log('data is', data)
+//   store.game = data.game
+// }
+// const updateGameFailure = () => {
+//   console.log('game patch failed')
+// }
+
 module.exports = {
-  createGameSuccess,
-  createGameFailure,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
@@ -81,5 +85,7 @@ module.exports = {
   changePasswordSuccess,
   changePasswordFailure,
   signOutFailure,
-  signOutSuccess
+  signOutSuccess,
+  createGameSuccess,
+  createGameFailure
 }
