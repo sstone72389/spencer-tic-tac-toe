@@ -2,6 +2,7 @@
 
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
+const game = require('./gameLogic')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -18,4 +19,5 @@ const authEvents = require('./auth/events.js')
 // On document ready
 $(() => {
   authEvents.addHandlers()
+  game.startGame()
 })
