@@ -62,7 +62,18 @@ const signOutFailure = () => {
   $('.authText').show()
 }
 
+const createGameSuccess = (data) => {
+  console.log('data is', data)
+  store.game = data.user
+}
+
+const createGameFailure = () => {
+  console.log('game not created successfully')
+}
+
 module.exports = {
+  createGameSuccess,
+  createGameFailure,
   signUpSuccess,
   signUpFailure,
   signInSuccess,
