@@ -1,4 +1,5 @@
 'use strict'
+
 let currentPlayer = 'x'
 let turnNumber = 1
 let gameArray = ['', '', '', '', '', '', '', '', '']
@@ -16,16 +17,17 @@ let win = false
 // ]
 
 // need to make this work for sign outs so gameboard resets without button
-// const reset = function () {
-//   $('.inner[data-id]').text('')
-//   gameArray = ['', '', '', '', '', '', '', '', '']
-//   turnNumber = 1
-//   $('.authText').hide()
-//   $('.winStatement').hide()
-//   $('.drawStatement').hide()
-//   currentPlayer = 'x'
-//   win = false
-// }
+$('.initButton').on('click', function () {
+  $('.inner[data-id]').text('')
+  gameArray = ['', '', '', '', '', '', '', '', '']
+  turnNumber = 1
+  $('.authText').hide()
+  $('.winStatement').hide()
+  $('.drawStatement').hide()
+  currentPlayer = 'x'
+  win = false
+  $('.container').show()
+})
 
 const checkWin = function () {
   if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[0] !== '') {
@@ -81,16 +83,4 @@ $('.inner[data-id]').on('click', function () {
   if (turnNumber === 10 && win === false) {
     $('.drawStatement').show()
   }
-  console.log(gameArray)
-})
-// reset button to reset board
-$('.resetButton').on('click', function () {
-  $('.inner[data-id]').text('')
-  gameArray = ['', '', '', '', '', '', '', '', '']
-  turnNumber = 1
-  $('.authText').hide()
-  $('.winStatement').hide()
-  $('.drawStatement').hide()
-  currentPlayer = 'x'
-  win = false
 })

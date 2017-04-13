@@ -15,13 +15,12 @@ const signInSuccess = (data) => {
   // $('.authText').hide()
   // does not work for some reason check tomorrow
   $('.signedIn').hide()
-  $('.container').show()
   $('.hideOnStart').show()
   $('.hideOnStartTwo').show()
   $('.authText').show()
   $('.hideOnSignIn').hide()
   $('.hideOnSignInTwo').hide()
-  $('.reset').show()
+  $('.init').show()
   $('.authText').hide()
 
   // store the user object as per below
@@ -51,7 +50,7 @@ const signOutSuccess = (data) => {
   $('.hideOnStartTwo').hide()
   $('.hideOnSignIn').show()
   $('.hideOnSignInTwo').show()
-  $('.reset').hide()
+  $('.init').hide()
   $('.winStatement').hide()
   // store the user with a value of null as per below
   store.user = null
