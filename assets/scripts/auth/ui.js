@@ -52,6 +52,7 @@ const signOutSuccess = (data) => {
   $('.hideOnSignInTwo').show()
   $('.init').hide()
   $('.winStatement').hide()
+  $('.drawStatement').hide()
   // store the user with a value of null as per below
   store.user = null
 }
