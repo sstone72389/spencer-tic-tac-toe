@@ -25,6 +25,11 @@ p {
   text-align: center;
 }
 
+input {
+  border: 2px solid lightgray;
+  border-radius: 4px;
+}
+
 .signedIn {
   font-size: 35px;
 }
