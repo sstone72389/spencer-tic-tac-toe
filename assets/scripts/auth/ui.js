@@ -5,14 +5,14 @@ const signUpSuccess = (data) => {
   $('.authText').text('THANKS FOR SIGNING UP')
   $('.authText').show()
   $('#signUpModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 }
 
 const signUpFailure = () => {
   $('.authText').text('Unsuccessful sign up')
   $('.authText').show()
   $('#signUpModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 }
 
 const signInSuccess = (data) => {
@@ -26,7 +26,7 @@ const signInSuccess = (data) => {
   $('.authText').hide()
   $('.getGamesDiv').show()
   $('#signInModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 
   // store the user object as per below
   store.user = data.user
@@ -36,21 +36,21 @@ const signInFailure = () => {
   $('.authText').text('Unsuccessful sign in')
   $('.authText').show()
   $('#signInModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 }
 
 const changePasswordSuccess = (data) => {
   $('.authText').text('Successful password change')
   $('.authText').show()
   $('#changePasswordModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 }
 
 const changePasswordFailure = () => {
   $('.authText').text('Unsuccessful password change')
   $('.authText').show()
   $('#changePasswordModal').modal('hide')
-  $('.clearFields').val('')
+  $('input').val('')
 }
 
 const signOutSuccess = (data) => {
