@@ -4,11 +4,15 @@ const store = require('../store.js')
 const signUpSuccess = (data) => {
   $('.authText').text('THANKS FOR SIGNING UP')
   $('.authText').show()
+  $('#signUpModal').modal('hide')
+  $('.clearFields').val('')
 }
 
 const signUpFailure = () => {
   $('.authText').text('Unsuccessful sign up')
   $('.authText').show()
+  $('#signUpModal').modal('hide')
+  $('.clearFields').val('')
 }
 
 const signInSuccess = (data) => {
@@ -21,6 +25,8 @@ const signInSuccess = (data) => {
   $('.init').show()
   $('.authText').hide()
   $('.getGamesDiv').show()
+  $('#signInModal').modal('hide')
+  $('.clearFields').val('')
 
   // store the user object as per below
   store.user = data.user
@@ -29,16 +35,22 @@ const signInSuccess = (data) => {
 const signInFailure = () => {
   $('.authText').text('Unsuccessful sign in')
   $('.authText').show()
+  $('#signInModal').modal('hide')
+  $('.clearFields').val('')
 }
 
 const changePasswordSuccess = (data) => {
   $('.authText').text('Successful password change')
   $('.authText').show()
+  $('#changePasswordModal').modal('hide')
+  $('.clearFields').val('')
 }
 
 const changePasswordFailure = () => {
   $('.authText').text('Unsuccessful password change')
   $('.authText').show()
+  $('#changePasswordModal').modal('hide')
+  $('.clearFields').val('')
 }
 
 const signOutSuccess = (data) => {
@@ -54,6 +66,7 @@ const signOutSuccess = (data) => {
   $('.drawStatement').hide()
   $('.getGamesDiv').hide()
   $('.getText').hide()
+  $('#signOutModal').modal('hide')
   // store the user with a value of null as per below
   store.user = null
 }
@@ -61,6 +74,7 @@ const signOutSuccess = (data) => {
 const signOutFailure = () => {
   $('.authText').text('Unsuccessful sign out')
   $('.authText').show()
+  $('#signOutModal').modal('hide')
 }
 
 const createGameSuccess = (data) => {
