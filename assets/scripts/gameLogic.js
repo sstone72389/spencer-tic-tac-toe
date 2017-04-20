@@ -21,43 +21,64 @@ const startGame = function () {
     $('.container').show()
     $('.getText').hide()
   })
-  // checks win status. Includes empty strings at end due to erroneous win
-  // immeadiately upon game start due to all cell data matching
+  // winning arrays to be looped through
   const checkWin = function () {
-    if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[0] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[3] === gameArray[4] && gameArray[4] === gameArray[5] && gameArray[3] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[6] === gameArray[7] && gameArray[7] === gameArray[8] && gameArray[6] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[0] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[1] === gameArray[4] && gameArray[4] === gameArray[7] && gameArray[1] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[2] === gameArray[5] && gameArray[5] === gameArray[8] && gameArray[2] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[0] === gameArray[4] && gameArray[4] === gameArray[8] && gameArray[0] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
-    } else if (gameArray[2] === gameArray[4] && gameArray[4] === gameArray[6] && gameArray[2] !== '') {
-      $('.winStatement').text(currentPlayer + ' has won!')
-      $('.winStatement').show()
-      win = true
+    const winArr = [
+    [gameArray[0], gameArray[1], gameArray[2]],
+    [gameArray[3], gameArray[4], gameArray[5]],
+    [gameArray[6], gameArray[7], gameArray[8]],
+    [gameArray[0], gameArray[4], gameArray[8]],
+    [gameArray[2], gameArray[4], gameArray[6]],
+    [gameArray[0], gameArray[3], gameArray[6]],
+    [gameArray[1], gameArray[4], gameArray[7]],
+    [gameArray[2], gameArray[5], gameArray[8]]
+    ]
+    for (const i in winArr) {
+      if ((winArr[i][0] === 'x' || winArr[i][0] === 'o') && (winArr[i][0] === winArr[i][1] && winArr[i][1] === winArr[i][2])) {
+        $('.winStatement').text(currentPlayer + ' has won!')
+        $('.winStatement').show()
+        win = true
+      }
     }
   }
+  // refactored in the above array/loop combo
+  // checks win status. Includes empty strings at end due to erroneous win
+  // immeadiately upon game start due to all cell data matching
+  // const checkWin = function () {
+  //   if (gameArray[0] === gameArray[1] && gameArray[1] === gameArray[2] && gameArray[0] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[3] === gameArray[4] && gameArray[4] === gameArray[5] && gameArray[3] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[6] === gameArray[7] && gameArray[7] === gameArray[8] && gameArray[6] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[0] === gameArray[3] && gameArray[3] === gameArray[6] && gameArray[0] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[1] === gameArray[4] && gameArray[4] === gameArray[7] && gameArray[1] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[2] === gameArray[5] && gameArray[5] === gameArray[8] && gameArray[2] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[0] === gameArray[4] && gameArray[4] === gameArray[8] && gameArray[0] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   } else if (gameArray[2] === gameArray[4] && gameArray[4] === gameArray[6] && gameArray[2] !== '') {
+  //     $('.winStatement').text(currentPlayer + ' has won!')
+  //     $('.winStatement').show()
+  //     win = true
+  //   }
+  // }
   // uses callback function that determines which div has been clicked
   $('.inner[data-id]').on('click', function () {
     // define update as a variable that contains an object within an object
