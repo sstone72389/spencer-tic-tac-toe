@@ -1,27 +1,27 @@
-``
 Technologies used:
 
-HTML
-CSS
-JS
-jQuery
-JSON
-AJAX
-Git
-GitHub
-Grunt
-Rails
-Sass
-Bootstrap
+* HTML
+* CSS
+* JS
+* jQuery
+* JSON
+* AJAX
+* Git
+* GitHub
+* Grunt
+* Rails
+* Sass
+* Bootstrap
 
 
 Link to Wire Frames:
 
-http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671623/IMG_2997_y5w5qp.jpg http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671644/IMG_2998_qqedft.jpg http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671648/IMG_2999_cne9fb.jpg
+<http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671623/IMG_2997_y5w5qp.jpg> <http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671644/IMG_2998_qqedft.jpg> <http://res.cloudinary.com/dfu4pwocw/image/upload/v1491671648/IMG_2999_cne9fb.jpg>
 
 This was my initial planning structure based on the game-scope-study including user stories:
 
-***************************************************************************************************
+******************************************************************************************
+
 gameboard: Array of 9 in JS Using Divs in HTML and CSS with respective borders to emulate proper game board. Classes and IDs will need to be used. user login: object (using JSON and Ajax) user info: object (using JSON and Ajax) player win status: boolean X game piece: string (large font styling with google fonts) O game piece: string (large font styling with google fonts)
 
 How you will take the markup of the game board and represent it in JS
@@ -52,7 +52,7 @@ Do you plan to attempt any of the bonuses?
 
 If time permits, yes.
 
-***************************************************************************************************
+******************************************************************************************
 
 
 Problem Solving Strategy/development proccess:
@@ -62,5 +62,3 @@ My strategy was to break things down into bit size pieces. Debugging was my main
 Unsolved issues:
 
 I believe i was able to meet all requirements. That said, I would really like to clean up my code and make it more modular. I would also like to utilize loops rather than if/else statements to make my code a bit more DRY.
-
-``
