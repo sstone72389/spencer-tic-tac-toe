@@ -2,7 +2,7 @@
 const store = require('../store.js')
 
 const signUpSuccess = (data) => {
-  $('.authText').text('THANKS FOR SIGNING UP')
+  $('.authText').text('THANKS FOR SIGNING UP').fadeIn().delay(2000).fadeOut('slow');
   $('.authText').show()
   $('#signUpModal').modal('hide')
   $('input').val('')
@@ -40,14 +40,14 @@ const signInFailure = () => {
 }
 
 const changePasswordSuccess = (data) => {
-  $('.authText').text('Successful password change')
+  $('.authText').text('Successful password change').fadeIn().delay(2000).fadeOut('slow');
   $('.authText').show()
   $('#changePasswordModal').modal('hide')
   $('input').val('')
 }
 
 const changePasswordFailure = () => {
-  $('.authText').text('Unsuccessful password change')
+  $('.authText').text('Unsuccessful password change').fadeIn().delay(2000).fadeOut('slow');
   $('.authText').show()
   $('#changePasswordModal').modal('hide')
   $('input').val('')
@@ -55,7 +55,7 @@ const changePasswordFailure = () => {
 
 const signOutSuccess = (data) => {
   $('.signedIn').show()
-  $('.container').hide()
+  $('.container-fluid').hide()
   $('.authText').hide()
   $('.hideOnStart').hide()
   $('.hideOnStartTwo').hide()
