@@ -18,7 +18,7 @@ const startGame = function () {
     $('.drawStatement').hide()
     currentPlayer = 'x'
     win = false
-    $('.container-fluid').show()
+    $('.container').show()
     $('.getText').hide()
   })
   // winning arrays to be looped through

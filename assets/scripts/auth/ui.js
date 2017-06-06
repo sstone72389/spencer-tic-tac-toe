@@ -55,7 +55,7 @@ const changePasswordFailure = () => {
 
 const signOutSuccess = (data) => {
   $('.signedIn').show()
-  $('.container-fluid').hide()
+  $('.container').hide()
   $('.authText').hide()
   $('.hideOnStart').hide()
   $('.hideOnStartTwo').hide()
