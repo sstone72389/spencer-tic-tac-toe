@@ -42,6 +42,18 @@ input {
   font-size: 16px;
 }
 
+.zoom-control {
+  font-size: 16px;
+}
+
+.mess-display {
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 1.1em;
+  // padding: 2em .5em .5em;
+}
+
 .signedIn {
   font-size: 35px;
 }
@@ -92,6 +104,7 @@ input {
 .init {
   display: none;
   text-align: center;
+  padding-bottom: .3em;
 }
 
 .getGamesDiv {
